@@ -21,10 +21,15 @@ window.exports = {
        ]);
       },
       select: (action, itemData, callbackSetList) => {
-        utools.db.put({
+        const api = utools.db.get('api');
+        const data = {
           _id: 'api',
           urlWithToken: itemData.urlWithToken,
-        });
+        };
+        if (api) {
+          data._rev = api._rev;
+        }
+        utools.db.put(data);
         utools.hideMainWindow();
         utools.showNotification('设置专属记录 API 成功！');
         utools.outPlugin();
@@ -44,7 +49,11 @@ window.exports = {
             content: payload,
           })
           .then(function (response) {
-            utools.showNotification('发送成功！');
+            if (response.data && response.data.code === -1) {
+              utools.showNotification('发送失败！请检查API是否正确？');
+            } else {
+              utools.showNotification('发送成功！');
+            }
           })
           .catch(function (error) {
             utools.showNotification('未知错误！');
