@@ -1,0 +1,26 @@
+{
+  "name": "utools-plugin-flomo",
+  "version": "1.0.0",
+  "description": "utools 插件: 使用 flomo 记录你的想法川流",
+  "dependencies": {
+    "axios": "^0.21.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/heibai01/utools-plugin-flomo.git"
+  },
+  "keywords": [
+    "flomo",
+    "utools"
+  ],
+  "author": "heibai",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heibai01/utools-plugin-flomo/issues"
+  },
+  "homepage": "https://github.com/heibai01/utools-plugin-flomo#readme"
+}

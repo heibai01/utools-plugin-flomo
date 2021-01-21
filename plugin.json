@@ -1,0 +1,29 @@
+{
+  "pluginName": "Flomo",
+  "description": "记录你的想法川流",
+  "author": "heibai",
+  "homepage": "https://github.com/heibai01/utools-plugin-flomo",
+  "logo": "icons/logo.png",
+  "preload": "preload.js",
+  "version": "0.0.1",
+  "features": [
+    {
+      "code": "setapi",
+      "explain": "设置你的专属记录 API",
+      "cmds": ["flomo", "set flomo api"]
+    },
+    {
+      "code": "sendto_by_text",
+      "explain": "发送文字到 Flomo",
+      "icon": "icons/send.png",
+      "cmds": [
+        {
+          "type": "regex",
+          "label": "发送",
+          "match": "/\\w+/",
+          "minLength": 5
+        }
+      ]
+    }
+  ]
+}
